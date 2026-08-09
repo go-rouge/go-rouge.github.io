@@ -1,0 +1,4 @@
+baseURL = "https://go-rouge.github.io/"
+languageCode = "en-us"
+title = "go-rouge"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ .Site.Title }} — Pure-Go syntax highlighting.</title>
+<meta name="description" content="Pure-Go syntax highlighting.">
+<link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
+<link rel="stylesheet" href="{{ "css/brand.css" | relURL }}">
+<script src="{{ "js/theme.js" | relURL }}"></script>
+</head><body>
+<section class="hero">
+  <button id="themebtn" class="theme" type="button">Theme: System</button>
+  <img src="{{ "img/go-rouge-white.png" | relURL }}" alt="go-rouge">
+  <h1>go-rouge</h1>
+  <p>Pure-Go syntax highlighting.</p>
+  <div class="btns">
+    <a class="btn btn-solid" href="https://go-rouge.github.io/docs/">Documentation</a>
+    <a class="btn btn-ghost" href="https://github.com/go-rouge">GitHub</a>
+  </div>
+</section>
+<div class="wrap">
+  <div class="panel">
+    <h2>What is go-rouge?</h2>
+    <p>go-rouge is a pure-Go (CGO_ENABLED=0) syntax highlighter in the Rouge/Pygments tradition: a family of language lexers that tokenize source and emit highlighted HTML, dependency-light and ready for js/wasm.</p>
+  </div>
+  <h2 class="section">Packages</h2>
+  <p class="sub">{{ len site.Data.pkgs.packages }} module(s) — generated from the org's repos.</p>
+  <div class="grid">
+    <div class="card"><div class="chip">RG</div><div class="nm">rouge</div><div class="ds">Rouge/Pygments-class lexers that tokenize source and emit highlighted HTML.</div><div class="lk"><a href="https://github.com/go-rouge/rouge">GitHub</a> · <a href="https://pkg.go.dev/github.com/go-rouge/rouge">pkg.go.dev</a></div></div>
+  </div>
+</div>
+<footer>Built with Hugo · Pure Go, CGO=0 · Branding from <a href="https://github.com/go-rouge/brand">go-rouge/brand</a></footer>
+</body></html>

@@ -1,0 +1,2 @@
+packages:
+  - { name: "rouge", desc: "Rouge/Pygments-class lexers that tokenize source and emit highlighted HTML.", url: "https://github.com/go-rouge/rouge", doc: "https://pkg.go.dev/github.com/go-rouge/rouge" }
