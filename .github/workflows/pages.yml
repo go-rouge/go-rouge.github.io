@@ -27,7 +27,7 @@ jobs:
           hugo-version: "0.161.1"
           extended: true
       - run: hugo --gc --minify
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
   deploy:
