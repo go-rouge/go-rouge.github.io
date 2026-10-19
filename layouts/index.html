@@ -29,6 +29,18 @@
   <div class="grid">
     <div class="card"><div class="chip">RG</div><div class="nm">rouge</div><div class="ds">Rouge/Pygments-class lexers that tokenize source and emit highlighted HTML.</div><div class="lk"><a href="https://github.com/go-rouge/rouge">GitHub</a> · <a href="https://pkg.go.dev/github.com/go-rouge/rouge">pkg.go.dev</a></div></div>
   </div>
+
+  {{/* The language list is DATA, generated from the library itself
+       (go run ./internal/lexlist > data/languages.yaml), so this page cannot
+       advertise a language the code does not have, nor omit one it does. The
+       count comes from the same list for the same reason. */}}
+  <h2 class="section">Languages</h2>
+  <p class="sub">{{ len site.Data.languages.languages }} lexers — each validated byte-for-byte against the reference <code>rouge</code> 5.0.0 gem.</p>
+  <div class="grid">
+    {{ range site.Data.languages.languages }}
+    <div class="card"><div class="nm">{{ .title }}</div><div class="ds"><code>{{ .tags }}</code></div></div>
+    {{ end }}
+  </div>
 </div>
 <footer>Built with Hugo · Pure Go, CGO=0 · Branding from <a href="https://github.com/go-rouge/brand">go-rouge/brand</a></footer>
 </body></html>
