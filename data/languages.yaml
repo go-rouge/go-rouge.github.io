@@ -1,0 +1,26 @@
+# Generated from the library: go run ./internal/lexlist > data/languages.yaml
+# Every entry is a lexer go-rouge/rouge actually registers.
+languages:
+  - { title: "C", tags: "c" }
+  - { title: "C++", tags: "cpp, c++" }
+  - { title: "COBOL", tags: "cobol" }
+  - { title: "CSS", tags: "css" }
+  - { title: "diff", tags: "diff, patch, udiff" }
+  - { title: "Fortran", tags: "fortran" }
+  - { title: "Go", tags: "go, golang" }
+  - { title: "Hashicorp Configuration Language", tags: "hcl" }
+  - { title: "HTML", tags: "html" }
+  - { title: "Java", tags: "java" }
+  - { title: "JavaScript", tags: "javascript, js" }
+  - { title: "JSON", tags: "json" }
+  - { title: "Markdown", tags: "markdown, md, mkd" }
+  - { title: "PHP", tags: "php, php3, php4, php5" }
+  - { title: "Plain Text", tags: "plaintext, text" }
+  - { title: "Python", tags: "python, py" }
+  - { title: "Ruby", tags: "ruby, rb" }
+  - { title: "Rust", tags: "rust, rs, rust,no_run, rs,no_run, rust,ignore, rs,ignore, rust,should_panic, rs,should_panic" }
+  - { title: "shell", tags: "shell, bash, zsh, ksh, sh" }
+  - { title: "SQL", tags: "sql" }
+  - { title: "Terraform", tags: "terraform, tf" }
+  - { title: "TeX", tags: "latex, tex, TeX, LaTeX" }
+  - { title: "YAML", tags: "yaml, yml" }
