@@ -6,6 +6,7 @@ languages:
   - { title: "COBOL", tags: "cobol" }
   - { title: "CSS", tags: "css" }
   - { title: "diff", tags: "diff, patch, udiff" }
+  - { title: "Docker", tags: "docker, dockerfile, Dockerfile, containerfile, Containerfile" }
   - { title: "Fortran", tags: "fortran" }
   - { title: "Go", tags: "go, golang" }
   - { title: "Hashicorp Configuration Language", tags: "hcl" }
@@ -13,9 +14,12 @@ languages:
   - { title: "Java", tags: "java" }
   - { title: "JavaScript", tags: "javascript, js" }
   - { title: "JSON", tags: "json" }
+  - { title: "JSX", tags: "jsx, react" }
+  - { title: "Make", tags: "make, makefile, mf, gnumake, bsdmake" }
   - { title: "Markdown", tags: "markdown, md, mkd" }
   - { title: "PHP", tags: "php, php3, php4, php5" }
   - { title: "Plain Text", tags: "plaintext, text" }
+  - { title: "Protobuf", tags: "protobuf, proto" }
   - { title: "Python", tags: "python, py" }
   - { title: "Ruby", tags: "ruby, rb" }
   - { title: "Rust", tags: "rust, rs, rust,no_run, rs,no_run, rust,ignore, rs,ignore, rust,should_panic, rs,should_panic" }
@@ -23,4 +27,8 @@ languages:
   - { title: "SQL", tags: "sql" }
   - { title: "Terraform", tags: "terraform, tf" }
   - { title: "TeX", tags: "latex, tex, TeX, LaTeX" }
+  - { title: "TOML", tags: "toml" }
+  - { title: "TSX", tags: "tsx" }
+  - { title: "TypeScript", tags: "typescript, ts" }
+  - { title: "XML", tags: "xml" }
   - { title: "YAML", tags: "yaml, yml" }
