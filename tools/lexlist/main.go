@@ -42,6 +42,14 @@ func main() {
 		tags := append([]string{l.Tag}, l.Aliases...)
 		fmt.Fprintf(&b, "  - { title: %q, tags: %q }\n", l.Title, strings.Join(tags, ", "))
 	}
+	if len(order) != wantLexers {
+		fmt.Fprintf(os.Stderr,
+			"lexlist: found %d lexers, expected %d.\n"+
+				"Either candidates() is missing a tag the library registers, or the\n"+
+				"pinned go-rouge/rouge version changed and wantLexers must follow.\n",
+			len(order), wantLexers)
+		os.Exit(1)
+	}
 	if _, err := os.Stdout.WriteString(b.String()); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
@@ -57,10 +65,25 @@ type lex struct {
 
 // candidates lists one known tag per lexer. FindLexer resolves each to its
 // canonical lexer, so a wrong guess simply yields nothing.
+//
+// ⚠ This list is the one hand-written thing left in the pipeline, and it is
+// where the page can silently fall behind: a lexer the library registers but
+// nobody names here is simply absent, and an absence looks exactly like a
+// language that does not exist. The library would have to export its registry
+// for this to go away; until it does, adding a lexer means adding a line here,
+// and `wantLexers` below turns forgetting into a build failure rather than a
+// quiet omission.
 func candidates() []string {
 	return []string{
 		"plaintext", "json", "diff", "go", "sql", "css", "shell", "yaml",
 		"python", "javascript", "html", "markdown", "ruby", "php", "tex",
 		"java", "c", "cpp", "rust", "cobol", "fortran", "hcl", "terraform",
+		"toml", "xml", "make", "typescript", "jsx", "tsx", "docker", "protobuf",
 	}
 }
+
+// wantLexers is the number of lexers the pinned library version registers. A
+// generator that cannot see a language reports its absence as an answer, so
+// the count is checked rather than trusted: if the pin moves and the list
+// above does not, this fails instead of quietly printing a short page.
+const wantLexers = 31
