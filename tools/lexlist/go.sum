@@ -1,6 +1,6 @@
-github.com/go-regexp/engine v0.3.2 h1:zublnb1Vf5Cclh59+cp35htv2aATddBMNp5VwMAeZcc=
-github.com/go-regexp/engine v0.3.2/go.mod h1:fWnPvSuE4HIVpBQIHMiaPMEE7InDc00KeoPr/QNFGwA=
-github.com/go-rouge/rouge v0.8.1 h1:m0s2HbGikvjpXL+2mN3Yg7gL1iGzzOKzct/1YXoMdy8=
-github.com/go-rouge/rouge v0.8.1/go.mod h1:R3jg4M5ltZUCc19bfAd8burX7zozHyynjS4oDmlNtUM=
-github.com/go-ruby-regexp/regexp v0.1.1 h1:gqueGLmsUVVleZMzEGKax2YfpJz+aLQqdbsHp+OB3CA=
-github.com/go-ruby-regexp/regexp v0.1.1/go.mod h1:RhMJEXTJUHXcrqbnS5cVSoEfLC1SBm4G+dMkhVB96RM=
+github.com/go-regexp/engine v0.4.2 h1:oI69hZyQyZH2n5w0UI7UEO7CaTa7hy3VSgKo76EJB4g=
+github.com/go-regexp/engine v0.4.2/go.mod h1:fWnPvSuE4HIVpBQIHMiaPMEE7InDc00KeoPr/QNFGwA=
+github.com/go-rouge/rouge v0.9.0 h1:qIFbx0aQYYE2YeSAeTjhWa5zumXHJuNi0i6pJgO2IEk=
+github.com/go-rouge/rouge v0.9.0/go.mod h1:7IYgKF1szaRpy9U7XZi+E8LChaaJyCgrwE1mCs+/lMs=
+github.com/go-ruby-regexp/regexp v0.2.1 h1:hzcRVdV91IMMn57owxxp3y6kcBWduJE5fXYoGcIHG0g=
+github.com/go-ruby-regexp/regexp v0.2.1/go.mod h1:Wa6vJhr6UR5wZuWtuJEEHZBI3rqYX5q1bj7TzUWIAXA=
