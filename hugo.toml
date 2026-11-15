@@ -40,3 +40,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
   kind  = "github"
   href  = "https://github.com/go-rouge"
   label = "GitHub"
+
+# The architectures the tests RUN on, read from the library's CI.
+[params.mantra]
+  goarch = ["amd64", "arm64", "riscv64", "loong64", "ppc64le", "s390x"]
