@@ -1,25 +1,56 @@
-<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-{{/* Dark Reader repaints pages that already draw their own dark theme, as this one does: ask it to stand aside. */}}
-<meta name="darkreader-lock">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ .Site.Title }} — Pure-Go syntax highlighting.</title>
 <meta name="description" content="Pure-Go syntax highlighting.">
 <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
-<link rel="stylesheet" href="{{ "css/brand.css" | relURL }}">
-<script src="{{ "js/theme.js" | relURL }}"></script>
-</head><body>
-<section class="hero">
-  <button id="themebtn" class="theme" type="button">Theme: System</button>
-  <img src="{{ "img/go-rouge-white.png" | relURL }}" alt="go-rouge">
-  <h1>go-rouge</h1>
-  <p>Pure-Go syntax highlighting.</p>
-  <div class="btns">
-    <a class="btn btn-solid" href="https://go-rouge.github.io/docs/">{{ partial "icons/book.html" . }}Documentation</a>
-    <a class="btn btn-ghost" href="https://github.com/go-rouge">{{ partial "icons/mark-github.html" . }}GitHub</a>
-  </div>
-</section>
-<div class="wrap">
+{{ partial "styles.html" . }}
+{{/* The template's own rules for what <main> holds, kept for it alone (class legacy),
+     its colours read from the kit's tokens. Written by landingmigrate. */}}
+<style>
+.legacy{--from:#22CCE2;--to:#0079A8;--dark:#0A6E96;--ink:#0b2530;--muted:var(--slate);--card:var(--bg-soft);--line:#e3ebef;--code:#0b2530;--codei:#d6f3fb;--shadow:rgba(0,60,90,.06);--shadow2:rgba(0,60,90,.10)}
+@media(prefers-color-scheme:dark){:root:not([data-theme]) .legacy{--ink:#e6f2f6;--line:#1f333b;--code:#02090c;--codei:#bfeefb;--shadow:rgba(0,0,0,.4);--shadow2:rgba(0,0,0,.55)}}
+:root[data-theme="dark"] .legacy{--ink:#e6f2f6;--line:#1f333b;--code:#02090c;--codei:#bfeefb;--shadow:rgba(0,0,0,.4);--shadow2:rgba(0,0,0,.55)}
+.legacy .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 26px;box-shadow:0 10px 30px var(--shadow)}
+.legacy .panel h2{color:var(--to);margin:0 0 8px}
+.legacy .panel p{margin:0 0 8px}
+.legacy h2.section{color:var(--to);margin:44px 0 4px}
+.legacy .sub{color:var(--muted);margin:0 0 16px}
+.legacy .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.legacy .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;transition:.15s;display:flex;flex-direction:column;gap:8px}
+.legacy .card:hover{transform:translateY(-2px);box-shadow:0 10px 28px var(--shadow2);border-color:var(--from)}
+.legacy .card .chip{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--from),var(--to));
+  color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,monospace;font-size:15px}
+.legacy .card .nm{font-weight:700;color:var(--ink);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:16px}
+.legacy .card .ds{font-size:14px;color:var(--muted);flex:1}
+.legacy .card .lk{font-size:13px;font-weight:600}
+</style>
+</head>
+<body class="lm">
+  <header class="nav"><div class="wrap">
+    <a class="brand" href="/"><img class="glyph" src="/favicon.svg" width="32" height="32" alt="go-rouge logo"> {{ .Site.Title }}</a>
+    {{ partial "theme-toggle.html" . }}
+  </div></header>
+  {{ partial "fork-ribbon.html" "https://github.com/go-rouge" }}
+
+  <div class="hero"><div class="wrap">
+    <div>
+      <h1 class="head">go-rouge</h1>
+      <p class="sub">{{ if partial "mantra-on.html" . }}Go{{ else }}Pure-Go{{ end }} syntax highlighting.</p>
+      {{/* [[params.cta]] in hugo.toml: the kit renders the row */}}
+      {{ partial "cta.html" . }}
+    </div>
+    {{ partial "hero-carousel.html" . }}
+  </div></div>
+
+  {{ with .Site.Params.repos }}<div class="strip"><div class="wrap">
+    <span class="lead-line">One organisation, <b>{{ len . }}</b> repositories</span>
+    <div class="mods">{{ range . }}<a href="#repos">{{ .name }}</a>{{ end }}</div>
+  </div></div>{{ end }}
+
+  <main id="repos" class="legacy"><div class="wrap">
   <div class="panel">
     <h2>What is go-rouge?</h2>
     <p>go-rouge is a pure-Go (CGO_ENABLED=0) syntax highlighter in the Rouge/Pygments tradition: a family of language lexers that tokenize source and emit highlighted HTML, dependency-light and ready for js/wasm.</p>
@@ -45,6 +76,8 @@
     <div class="card"><div class="nm">{{ .title }}</div><div class="ds"><code>{{ .tags }}</code></div></div>
     {{ end }}
   </div>
-</div>
-<footer>Built with Hugo · Pure Go, CGO=0 · Branding from <a href="https://github.com/go-rouge/brand">go-rouge/brand</a></footer>
-</body></html>
+  </div></main>
+
+  <footer><div class="wrap"><span>Built with Hugo · {{ if not (partial "mantra-on.html" $) }}Pure Go, CGO=0 · {{ end }}Branding from <a href="https://github.com/go-rouge/brand">go-rouge/brand</a></span></div></footer>
+</body>
+</html>
